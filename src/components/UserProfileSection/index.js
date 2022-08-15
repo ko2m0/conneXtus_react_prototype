@@ -2,7 +2,7 @@ import React from 'react'
 import '../../App.css';
 import { ProfileWsSection, NameSection, ProfilePicSection, SectionContainer, UserProfileContainer } from './UserElements'
 import { FaRegCompass, FaUserPlus } from 'react-icons/fa'
-
+import user_img from '../../img/user2.jpg';
 
 const UserProfileSection = () => {
   return (
@@ -10,17 +10,24 @@ const UserProfileSection = () => {
     <SectionContainer>
       <UserProfileContainer>
         <ProfilePicSection>
-        <svg width="52" height="52">
-          <circle fill="#ffffff" stroke="#ff9900" stroke-width="1" cx="25" cy="25" r="25"></circle>  
+        <svg width="58" height="58">
+        <circle fill="#E5E4E2" stroke="#ff9900" stroke-width="2" cx="28" cy="28" r="28"></circle>  
+          <mask id="svgMask">
+            <circle fill="#ffffff" cx="27" cy="27" r="25"></circle>  
+          </mask>
+          <image xlinkHref={user_img} mask="url(#svgMask)"
+           height="100%"
+           width="100%"          
+          ></image>
         </svg>
         </ProfilePicSection>
         <NameSection>
             <ul className='nameSection-ul'>
               <li className='nameSection-li'>
-                <p className='unuscolor-txt'>Mark Cuban</p>
+                <p className='unuscolor-txt nameSection-name'>Mark Cuban</p>
               </li>
               <li>
-                <p className='unuscolor-txt'>Proffesional Shark/ Billionaire</p>
+                <p className='unuscolor-txt nameSection-profession'>Professional Shark/ Billionaire</p>
               </li>
             </ul>
         </NameSection>

@@ -2,13 +2,49 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #E5E4E2;
   font-family: 'Montserrat', sans-serif;
 }
 
 .border-test {
   border: 1px dashed red;
 }
+
+
+html {
+  --page-color: #E5E4E2;
+  --ink-color: #014479;
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    --page-color: #014479;
+    --ink-color: white;
+  }
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.55;
+  letter-spacing: 0.03ch;
+  background-color: var(--page-color);
+  color: var(--ink-color);
+}
+input {
+  font-size: 1rem;
+  background-color: var(--page-color);
+  color: var(--ink-color);
+  border-color: var(--ink-color);
+  border-radius: 2px;
+}
+button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  background-color: var(--ink-color);
+  color: var(--page-color);
+  text-transform: uppercase;
+  letter-spacing: 0.2ch;
+  border-radius: 2px;
+}
+
+
 
 /* COLORS */
 
@@ -28,17 +64,31 @@
   background-color: #ff9900;
 }
 
+/* Video Masks  */
+
+.png-video-mask{
+  position: absolute;
+  bottom: 0;
+  right: -5%;
+  min-width: 100%;
+
+}
 
 
 /* Profile Section */
 
 .nameSection-ul {
   list-style: none;
+  padding: 3px 5px;
 }
 
-.nameSection-li > p {
-  font-size: larger;
+.nameSection-name{
+  font-size: 20px;
   font-weight: bold;
+}
+
+.nameSection-profession {
+  font-size: 16px;
 }
 
 /* BTNS Section */
@@ -51,8 +101,14 @@
   text-align: center;
 }
 
+.btns-btn_icon {
+  min-width: 45px;
+}
 
-[label react-tabs-component/src/App.css] .tab-list {
+
+
+/*[label react-tabs-component/src/App.css]*/
+ .tab-list {
   border-bottom: 1px solid #ccc;
   padding-left: 0;
 }
@@ -68,4 +124,12 @@
   background-color: white;
   border: solid #ccc;
   border-width: 1px 1px 0 1px;
+}
+
+
+/* FOOTER */
+
+
+.footer-logo {
+  max-width: 90px;
 }

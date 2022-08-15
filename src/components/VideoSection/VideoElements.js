@@ -24,5 +24,4 @@ width: 100%;
 height: 100%;
 object-fit: cover;
 -o-object-fit: cover;
-background: coral;
 `

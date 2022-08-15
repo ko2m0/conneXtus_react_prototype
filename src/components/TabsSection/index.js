@@ -1,28 +1,15 @@
-import React from 'react';
-import { SectionContainer, TabsContainer  } from './TabsElements';
-import { Tabs } from './Tabs';
-import '../../App.css'; 
+import React from 'react'
+import { SectionContainer } from './TabsElements'
+import TabsNu from './TabsNu'
 
-const TabsSection = () => {
+const TabSection = () => {
   return (
     <>
     <SectionContainer>
-      <TabsContainer>
-      /* TABS HERE */
-        <div label="Gator">
-          See ya later, <em>Alligator</em>!
-        </div>
-        <div label="Croc">
-          After 'while, <em>Crocodile</em>!
-        </div>
-        <div label="Sarcosuchus">
-          Nothing to see here, this tab is <em>extinct</em>!
-        </div>
-        /* TABS HERE */
-      </TabsContainer>
+        <TabsNu/>
     </SectionContainer>
     </>
   )
 }
 
-export default TabsSection;
+export default TabSection

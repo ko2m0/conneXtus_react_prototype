@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const SectionContainer = styled.div`
 position: relative;
-border: 1px dashed red
+padding: 10px;
 `
 
 export const TabsContainer = styled.div`
@@ -12,4 +12,7 @@ justify-content: space-around;
 align-items: center;
 padding: 10px;
 position: relative;
+`
+export const TabsInfoPanel = styled.div`
+padding: 0 5px;
 `
