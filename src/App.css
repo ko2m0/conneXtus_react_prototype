@@ -2,4 +2,70 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background-color: #E5E4E2;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.border-test {
+  border: 1px dashed red;
+}
+
+/* COLORS */
+
+.unuscolor-txt {
+  color: #014479;
+}
+
+.unuscolor-bg {
+  background-color: #014479;
+}
+
+.duocolor-txt {
+  color: #ff9900;
+}
+
+.duocolor-bg {
+  background-color: #ff9900;
+}
+
+
+
+/* Profile Section */
+
+.nameSection-ul {
+  list-style: none;
+}
+
+.nameSection-li > p {
+  font-size: larger;
+  font-weight: bold;
+}
+
+/* BTNS Section */
+
+.txt-bold {
+  font-weight: bold;
+}
+
+.txt-center{
+  text-align: center;
+}
+
+
+[label react-tabs-component/src/App.css] .tab-list {
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+}
+
+.tab-list-item {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  padding: 0.5rem 0.75rem;
+}
+
+.tab-list-active {
+  background-color: white;
+  border: solid #ccc;
+  border-width: 1px 1px 0 1px;
 }

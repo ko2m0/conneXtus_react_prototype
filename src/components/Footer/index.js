@@ -1,8 +1,15 @@
 import React from 'react'
+import { FooterContainer, FooterLogoContainer } from './FooterElements'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <>
+    <FooterContainer>
+        <FooterLogoContainer>
+          <div>logo</div>
+        </FooterLogoContainer>
+    </FooterContainer>
+    </>
   )
 }
 
