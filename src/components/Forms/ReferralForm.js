@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import styled from 'styled-components';
 import { FormContainer, FormAlert, ErrorMessage } from './FormElements'
 
 function MeetingForm() {
@@ -16,9 +15,6 @@ function MeetingForm() {
     alert(inputs);
   }
 
-  const [textarea, setTextarea] = useState(
-    "The content of a textarea goes in the value attribute"
-  );
 
   return (
     <>
