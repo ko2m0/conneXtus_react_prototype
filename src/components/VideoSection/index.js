@@ -14,6 +14,6 @@ const VideoSection = () => {
     </VideoContainer>
     </>
   )
-}
+} 
 
 export default VideoSection
