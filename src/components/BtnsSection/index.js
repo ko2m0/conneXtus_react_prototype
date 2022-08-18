@@ -24,14 +24,14 @@ function BtnsSection() {
         <p className='unuscolor-txt txt-center txt-bold'>Message</p>
         </div>
         <div>
-        <Button onClick={() => setShowModal1(!showModal1)}>
+        <Button onTouchEnd={() => setShowModal1(!showModal1)} onClick={() => setShowModal1(!showModal1)} >
           <img src={meet_icon} alt="Meeting" className='btns-btn_icon'/>
         </Button>
         <p className='unuscolor-txt txt-center txt-bold'>Meeting</p>
         </div>
         
         <div>
-        <Button onClick={() => setShowModal2(!showModal2)}>
+        <Button onTouchEnd={() => setShowModal2(!showModal2)} onClick={() => setShowModal2(!showModal2)}>
         <img src={refer_icon} alt="Message" className='btns-btn_icon'/>
         </Button>
         <p className='unuscolor-txt txt-center txt-bold'>Referral</p>
