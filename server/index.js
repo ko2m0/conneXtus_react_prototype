@@ -56,11 +56,34 @@ app.post('/meeting', async(req, res) => {
     } catch (error) {
         console.log(error);
     }
-
 })
 
-app.post('/referral', (req, res) => {
-    res.json("Hello conenxtus")
+app.post('/referral', async(req, res) => {
+    const client = new MongoClient(uri)
+    const {referral_name, referral_email, email, user_id} = req.body
+
+    try {
+        await client.connect()
+        const database = client.db('connextus')
+        const meetings = database.collection('referrals')
+
+        const cleanEmail = email.toLowerCase();
+        const now = new Date();
+        const formatted = now.toISOString(); //RFC 3339 format
+        const data = {
+            email: cleanEmail,
+            timestamp: formatted,
+            referral_name: referral_name,
+            referral_email: referral_email,
+            to_user_id: user_id
+        }
+
+        const referral = await meetings.insertOne(data)
+
+        res.status(201).json({ referral: referral })
+    } catch (error) {
+        console.log(error);
+    }
 })
 
 app.post('/message', (req, res) => {

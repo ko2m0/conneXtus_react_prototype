@@ -33,7 +33,7 @@ function MeetingForm({ currentProfessional, setShow }) {
     } catch (error) {
       console.log(error)
     }
-  };
+  }
 
   const validateInputs = () => {
     let valid = Object.entries(inputs).every( item => item.length > 0)

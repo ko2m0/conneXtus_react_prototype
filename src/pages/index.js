@@ -93,7 +93,10 @@ const Home = () => {
           modalTitle="Meeting"
         >
           <ModalContentContainer>
-            <MeetingForm currentProfessional={currentProfessional} setShow={setShowMeetingForm} />
+            <MeetingForm
+              currentProfessional={currentProfessional}
+              setShow={setShowMeetingForm}
+            />
           </ModalContentContainer>
         </AltModal>
 
@@ -103,7 +106,10 @@ const Home = () => {
           modalTitle="Referral"
         >
           <ModalContentContainer>
-          <ReferralForm currentProfessional={currentProfessional}/>
+          <ReferralForm
+            currentProfessional={currentProfessional}
+            setShow={setShowReferralForm}
+          />
           </ModalContentContainer>
         </AltModal>
       </div>
