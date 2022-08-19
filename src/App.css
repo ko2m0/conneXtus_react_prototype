@@ -118,6 +118,10 @@ button {
   min-width: 45px;
 }
 
+.btn-success {
+  background-color: #45a049;
+  transition: 1s;
+}
 
 
 /*[label react-tabs-component/src/App.css]*/
