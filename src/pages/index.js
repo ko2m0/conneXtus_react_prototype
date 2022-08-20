@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import BtnsSection from '../components/BtnsSection'
 import Footer from '../components/Footer'
 import SmSection from '../components/SmSection'
@@ -14,52 +14,30 @@ import {
 } from "../components/AltModals/AltModal";
 import MeetingForm from "../components/Forms/MeetingForm";
 import ReferralForm from '../components/Forms/ReferralForm';
-
-const db = [
-  {
-    user_id: "ramdom_user_id_3",
-    name: "Cosme Fulanito",
-    credentials: "Professional Shark/ Billionaire",
-    url: "https://http2.mlstatic.com/D_NQ_NP_760653-MLM43882836200_102020-O.jpg",
-  },
-  {
-    user_id: "ramdom_user_id_2",
-    name: "Lalo Landa",
-    credentials: "Unknown profession/ Enthusiastic reader/ Quiet man",
-    url: "https://pbs.twimg.com/profile_images/2430887577/Lalo_Landa_400x400.jpg",
-  },
-  {
-    user_id: "ramdom_user_id_1",
-    name: "Max Power",
-    credentials: "Determined man, without commitment and bad gay",
-    url: "http://k31.kn3.net/3FBE205FD.png",
-  },
-  {
-    user_id: "ramdom_user_id_4",
-    name: "Homero Jimeno",
-    credentials: "Accountant",
-    url: "https://pbs.twimg.com/media/E1NKoicXsAI8FAB.jpg",
-  },
-  {
-    user_id: "ramdom_user_id_4",
-    name: "Apu Nahasapeemapetilon",
-    credentials: "CEO Kwik-E-Mart",
-    url: "https://www.lavanguardia.com/files/og_thumbnail/uploads/2019/12/09/5fa52e1c135b6.jpeg",
-  },
-  {
-    user_id: "ramdom_user_id_5",
-    name: "Homero Thomson",
-    credentials: "Spy",
-    url: "https://pbs.twimg.com/media/E8DgHZDXIAsK1q_.jpg",
-  },
-];
+import axios from 'axios'
 
 const Home = () => {
-  const professionals = db;
+  const [professionals, setProfessionals] = useState([]);
   const [showMeetingForm, setShowMeetingForm] = useState(false);
   const [showReferralForm, setShowReferralForm] = useState(false);
   const [currentProfessional, setCurrentProfessional] = useState(false);
 
+  const users = async() => {
+    try {
+      const res = await axios.get('http://localhost:8000/users')
+
+      setProfessionals(res.data)  
+    } catch (error) {
+      console.log(error);
+    }
+  
+    return users;
+  }
+
+  useEffect(() => {
+    users()
+  }, [])
+  
   return (
     <>
       <div>
@@ -67,7 +45,7 @@ const Home = () => {
           {professionals.map((professional) => (
             <TinderCard
               className="swipe"
-              key={professional.name}
+              key={professional.user_id}
               preventSwipe={["up", "down"]}
             >
               <div className="wrapper card">
@@ -79,7 +57,9 @@ const Home = () => {
                   setShowMeetingForm={setShowMeetingForm}
                   setShowReferralForm={setShowReferralForm}
                   />
-                <TabsSection />
+                <TabsSection
+                  professional={professional}
+                />
                 <SmSection />
                 <Footer />
               </div>

@@ -2,11 +2,11 @@ import React from 'react'
 import { SectionContainer } from './TabsElements'
 import TabsNu from './TabsNu'
 
-const TabSection = () => {
+const TabSection = ({ professional }) => {
   return (
     <>
     <SectionContainer>
-        <TabsNu/>
+        <TabsNu professional={professional} />
     </SectionContainer>
     </>
   )

@@ -2,8 +2,9 @@ const PORT = 8000
 const express = require('express')
 const { MongoClient } = require('mongodb')
 const cors = require('cors')
+require('dotenv').config()
 
-const uri = "mongodb+srv://connextus_adm:aRmFzpvylHDXvRC1@cluster0.u9liseb.mongodb.net/Cluster0?retryWrites=true&w=majority"
+const uri = process.env.URI
 
 const app = express()
 app.use(cors())

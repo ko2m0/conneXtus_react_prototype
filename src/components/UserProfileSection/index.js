@@ -15,7 +15,7 @@ const UserProfileSection = ({professional}) => {
           <mask id="svgMask">
             <circle fill="#ffffff" cx="27" cy="27" r="25"></circle>  
           </mask>
-          <image xlinkHref={professional.url} mask="url(#svgMask)"
+          <image xlinkHref={professional.profile_photo} mask="url(#svgMask)"
            height="100%"
            width="100%"          
           ></image>
@@ -24,7 +24,7 @@ const UserProfileSection = ({professional}) => {
         <NameSection>
             <ul className='nameSection-ul'>
               <li className='nameSection-li'>
-                <p className='unuscolor-txt nameSection-name'>{professional.name}</p>
+                <p className='unuscolor-txt nameSection-name'>{professional.first_name.concat(' ', professional.last_name)}</p>
               </li>
               <li>
                 <p className='unuscolor-txt nameSection-profession'>{professional.credetials}</p>

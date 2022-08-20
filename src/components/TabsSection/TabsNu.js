@@ -2,7 +2,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { TabsInfoPanel } from './TabsElements';
 
-export default () => (
+const TabsNu = ({ professional }) => (
   <Tabs>
     <TabList>
       <Tab>
@@ -14,12 +14,18 @@ export default () => (
     </TabList>
     <TabPanel>
       <TabsInfoPanel>
-        <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-        lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
+        <p>{ professional.about }</p>
       </TabsInfoPanel>
     </TabPanel>
     <TabPanel>
-      <p>Any content 2</p>
+      {
+        (professional.clients.length && professional.clients.map((client) => (
+          <p>{client.name}</p>
+        ))) || <p>There is not clients yet</p>
+      }
+      {/*  */}
     </TabPanel>
   </Tabs>
 );
+
+export default TabsNu
