@@ -2,7 +2,6 @@ import React from 'react'
 import '../../App.css';
 import { ProfileWsSection, NameSection, ProfilePicSection, SectionContainer, UserProfileContainer } from './UserElements'
 import { FaRegCompass, FaUserPlus } from 'react-icons/fa'
-import user_img from '../../img/user2.jpg';
 
 const UserProfileSection = ({professional}) => {
   return (

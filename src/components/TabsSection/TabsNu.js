@@ -18,12 +18,13 @@ const TabsNu = ({ professional }) => (
       </TabsInfoPanel>
     </TabPanel>
     <TabPanel>
-      {
-        (professional.clients.length && professional.clients.map((client) => (
-          <p>{client.name}</p>
-        ))) || <p>There is not clients yet</p>
-      }
-      {/*  */}
+      <div className='tab-panel-clients'>
+        {
+          (professional.clients.length && professional.clients.map((client) => (
+            <img key={client.name} src={client.img} alt={client.name}/>
+          ))) || <p>There is not clients yet</p>
+        }
+      </div>
     </TabPanel>
   </Tabs>
 );

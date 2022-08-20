@@ -143,6 +143,16 @@ button {
   border-width: 1px 1px 0 1px;
 }
 
+.tab-panel-clients {
+  max-width: 100%;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.tab-panel-clients img{
+  max-width: 90%;
+  max-width: 20%;
+}
 
 /* FOOTER */
 
@@ -154,10 +164,12 @@ button {
 /* SWIPER */
 .swipe {
   position: absolute;
+  width: 100%;
 }
 
 .card {
   background-color: #fff;
+  width: 100%;
 }
 
 /* NAV */
