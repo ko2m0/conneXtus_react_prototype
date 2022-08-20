@@ -144,13 +144,13 @@ button {
 }
 
 .tab-panel-clients {
+  min-height: 60px;
   max-width: 100%;
   display: flex;
   overflow: hidden;
 }
 
 .tab-panel-clients img{
-  max-width: 90%;
   max-width: 20%;
 }
 
@@ -213,3 +213,23 @@ nav .logo-container {
 .home {
   text-align: center;
 }
+
+.btn-see-all {
+  margin-top: 15px;
+  max-height: 18px;
+  font-size: 14px !important;
+  padding: 12px 32px !important;
+}
+
+  .all-clients-container {
+    margin-top: 20px;
+    min-height: 60px;
+    max-height: 400px;
+    max-width: 100%;
+    overflow: scroll;
+  }
+
+  .all-clients-container img{
+    max-width: 90%;
+    max-width: 20%;
+  }

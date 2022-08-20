@@ -15,12 +15,14 @@ import {
 import MeetingForm from "../components/Forms/MeetingForm";
 import ReferralForm from '../components/Forms/ReferralForm';
 import axios from 'axios'
+import { FormAlert } from '../components/Forms/FormElements'
 
 const Home = () => {
   const [professionals, setProfessionals] = useState([]);
   const [showMeetingForm, setShowMeetingForm] = useState(false);
   const [showReferralForm, setShowReferralForm] = useState(false);
   const [currentProfessional, setCurrentProfessional] = useState(false);
+  const [showAllClients, setShowAllClients] = useState(false)
 
   const users = async() => {
     try {
@@ -59,6 +61,8 @@ const Home = () => {
                   />
                 <TabsSection
                   professional={professional}
+                  setCurrentProfessional={setCurrentProfessional}
+                  setShowAllClients={setShowAllClients}
                 />
                 <SmSection />
                 <Footer />
@@ -90,6 +94,24 @@ const Home = () => {
             currentProfessional={currentProfessional}
             setShow={setShowReferralForm}
           />
+          </ModalContentContainer>
+        </AltModal>
+
+        <AltModal
+          show={showAllClients}
+          setShow={setShowAllClients}
+          modalTitle="All Clients"
+        >
+          <ModalContentContainer>
+          <FormAlert className='alert-all-clients'>
+            <div className='all-clients-container'>
+              {
+                currentProfessional && currentProfessional.clients.length && currentProfessional.clients.map((client, index) => (
+                  <img key={client.name + "-" + index} src={client.img} alt={client.name}/>
+                ))
+              }
+            </div>
+          </FormAlert>
           </ModalContentContainer>
         </AltModal>
       </div>

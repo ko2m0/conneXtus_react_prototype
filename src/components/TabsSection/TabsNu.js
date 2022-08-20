@@ -4,6 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import { Button } from '../BtnsSection/BtnsElements';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -38,7 +39,7 @@ function a11yProps(index) {
   };
 }
 
-export default function TabsNu({ professional }) {
+export default function TabsNu({ professional, setShowAllClients, setCurrentProfessional }) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -47,6 +48,11 @@ export default function TabsNu({ professional }) {
   
   const handleChangeTouch = (newValue) => {
     setValue(newValue);
+  }
+
+  const handleSeeAll = () => {
+    setShowAllClients(true)
+    setCurrentProfessional(professional)
   }
 
   return (
@@ -63,11 +69,16 @@ export default function TabsNu({ professional }) {
       <TabPanel value={value} index={1}>
         <div className='tab-panel-clients'>
           {
-            (professional.clients.length && professional.clients.map((client) => (
-              <img key={client.name} src={client.img} alt={client.name}/>
+            (professional.clients.length && professional.clients.map((client, index) => (
+              (index < 5) && <img key={client.name + "-" + index} src={client.img} alt={client.name}/>
             ))) || <p>There is not clients yet</p>
+
           }
         </div>
+        {
+          (professional.clients.length > 5) &&
+          <Button onClick={handleSeeAll} onTouchEnd={handleSeeAll} className='btn-see-all'>See all</Button>
+        }
       </TabPanel>
     </Box>
   );

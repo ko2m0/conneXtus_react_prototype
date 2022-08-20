@@ -2,11 +2,15 @@ import React from 'react'
 import { SectionContainer } from './TabsElements'
 import TabsNu from './TabsNu'
 
-const TabSection = ({ professional }) => {
+const TabSection = ({ professional, setShowAllClients, setCurrentProfessional }) => {
   return (
     <>
     <SectionContainer>
-        <TabsNu professional={professional} />
+        <TabsNu
+          professional={professional}
+          setShowAllClients={setShowAllClients}
+          setCurrentProfessional={setCurrentProfessional}
+          />
     </SectionContainer>
     </>
   )
