@@ -146,7 +146,7 @@ button {
 .tab-panel-clients {
   max-width: 100%;
   display: flex;
-  overflow-x: scroll;
+  overflow: hidden;
 }
 
 .tab-panel-clients img{
