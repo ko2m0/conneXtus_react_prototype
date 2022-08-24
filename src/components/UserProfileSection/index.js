@@ -2,20 +2,19 @@ import React from 'react'
 import '../../App.css';
 import { ProfileWsSection, NameSection, ProfilePicSection, SectionContainer, UserProfileContainer } from './UserElements'
 import { FaRegCompass, FaUserPlus } from 'react-icons/fa'
-import user_img from '../../img/user2.jpg';
 
-const UserProfileSection = () => {
+const UserProfileSection = ({professional}) => {
   return (
     <>
     <SectionContainer>
       <UserProfileContainer>
         <ProfilePicSection>
         <svg width="58" height="58">
-        <circle fill="#E5E4E2" stroke="#ff9900" stroke-width="2" cx="28" cy="28" r="28"></circle>  
+        <circle fill="#E5E4E2" stroke="#ff9900" strokeWidth="2" cx="28" cy="28" r="28"></circle>  
           <mask id="svgMask">
             <circle fill="#ffffff" cx="27" cy="27" r="25"></circle>  
           </mask>
-          <image xlinkHref={user_img} mask="url(#svgMask)"
+          <image xlinkHref={professional.profile_photo} mask="url(#svgMask)"
            height="100%"
            width="100%"          
           ></image>
@@ -24,10 +23,10 @@ const UserProfileSection = () => {
         <NameSection>
             <ul className='nameSection-ul'>
               <li className='nameSection-li'>
-                <p className='unuscolor-txt nameSection-name'>Mark Cuban</p>
+                <p className='unuscolor-txt nameSection-name'>{professional.first_name.concat(' ', professional.last_name)}</p>
               </li>
               <li>
-                <p className='unuscolor-txt nameSection-profession'>Professional Shark/ Billionaire</p>
+                <p className='unuscolor-txt nameSection-profession'>{professional.credetials}</p>
               </li>
             </ul>
         </NameSection>

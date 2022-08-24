@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import axios from "axios";
 import { FormContainer, FormAlert, ErrorMessage } from './FormElements'
 
-function MeetingForm() {
+function ReferralForm({ currentProfessional, setShow }) {
   const [inputs, setInputs] = useState({});
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null)
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -10,22 +13,44 @@ function MeetingForm() {
     setInputs(values => ({...values, [name]: value}))
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
-    alert(inputs);
+    try {
+      const valid = validateInputs()
+      if (!valid) {
+        setError("Invalid values");
+        return
+      }
+
+      const response = await axios.post('http://localhost:8000/referral', {...inputs, user_id: currentProfessional.user_id})
+
+      if(response.status === 201) {
+        setSuccess(true)
+        setTimeout(() => {
+          setShow(false)
+        }, 1300);
+      }
+    } catch (error) {
+      console.log(error)
+    }
   }
 
+  const validateInputs = () => {
+    let valid = Object.entries(inputs).every( item => item.length > 0)
+
+    return valid;
+  };
 
   return (
     <>
     <FormContainer>
-        <ErrorMessage>Im an error message</ErrorMessage>
+        {error && <ErrorMessage>{error}</ErrorMessage>}
     <form onSubmit={handleSubmit}>
       <label>Enter Referral name: *
       <input 
         type="text" 
-        name="username" 
-        value={inputs.username || ""} 
+        name="referral_name" 
+        value={inputs.referral_name || ""} 
         onChange={handleChange}
       />
       <FormAlert>an alert</FormAlert>
@@ -33,28 +58,29 @@ function MeetingForm() {
         <label>Enter Referral e-mail: *
         <input 
           type="email" 
-          name="age" 
-          value={inputs.age || ""} 
+          name="referral_email" 
+          value={inputs.referral_email || ""} 
           onChange={handleChange}
         />
         <FormAlert>an alert</FormAlert>
         </label>
         <label>Referral from:
         <input 
-          type="type" 
-          name="" 
-          value={inputs.age || ""} 
+          type="email" 
+          name="email" 
+          value={inputs.email || ""} 
           onChange={handleChange}
         />
         <FormAlert>an alert</FormAlert>
         </label>
-        <input type="submit" value="submit info" />
+        {!success && <input type="submit" value="submit info" />}
+        {success && <input type="submit" value="submit info" className="btn-success" />}
     </form>
     </FormContainer>
     </>
   )
 }
 
-export default MeetingForm;
+export default ReferralForm;
 
 

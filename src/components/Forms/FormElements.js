@@ -35,6 +35,7 @@ input, select {
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
+    transition: 1s;
   }
   
   input[type=submit]:hover {

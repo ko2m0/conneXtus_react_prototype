@@ -11,7 +11,7 @@ export const AltModal = ({children, show, setShow, modalTitle}) => {
             <ModalHeader>
                <h3 className='duocolor-txt'>{modalTitle}</h3> 
             </ModalHeader>
-            <ModalCloseBtn onClick={() => setShow(false)}>
+            <ModalCloseBtn onTouchEnd={() => setShow(false)} onClick={() => setShow(false)}>
                 <MdClose/>
             </ModalCloseBtn>
             {children}
