@@ -233,3 +233,11 @@ nav .logo-container {
     max-width: 90%;
     max-width: 20%;
   }
+
+  .loading {
+    height: 100%;
+    top: 30%;
+    width: 100%;
+    margin-left: 35%;
+    position: absolute;
+  }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useParams  } from 'react-router-dom'
 import BtnsSection from '../components/BtnsSection'
 import Footer from '../components/Footer'
 import SmSection from '../components/SmSection'
@@ -23,6 +24,7 @@ const Home = () => {
   const [showReferralForm, setShowReferralForm] = useState(false);
   const [currentProfessional, setCurrentProfessional] = useState(false);
   const [showAllClients, setShowAllClients] = useState(false)
+  const {userName} = useParams()
 
   const users = async() => {
     try {
@@ -36,13 +38,29 @@ const Home = () => {
     return users;
   }
 
+  const getProfile = async(userName) => {
+    const res = await axios.get("http://localhost:8000/user/" + userName)
+    console.log(res)
+    console.log(res.data)
+    setProfessionals([{...res.data.user}])
+  }
+
+  const getUser = (userName) => {
+    if(userName) {
+      getProfile(userName)
+    }else{
+      users()
+    }
+  }
+
   useEffect(() => {
-    users()
+    getUser(userName)
   }, [])
   
   return (
     <>
       <div>
+        {!professionals.length && <div className='loading'>Please wait...</div>}
         <div className="cardContainer">
           {professionals.map((professional) => (
             <TinderCard

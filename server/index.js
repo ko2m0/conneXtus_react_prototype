@@ -14,6 +14,24 @@ app.get('/', (req, res) => {
     res.json("Hello conenxtus")
 })
 
+app.get('/user/:userName', async(req, res) => {
+    const client = new MongoClient(uri)
+    const {userName} = req.params
+
+    try {
+        await client.connect()
+        const database = client.db('connextus')
+        const users = database.collection('users')
+
+        const user = await users.findOne({ user_name: userName })
+        res.status(200).json({user})
+    } catch(error) {
+        console.log(error);
+    } finally {
+        await client.close();
+    }
+})
+
 app.get('/users', async(req, res) => {
     const client = new MongoClient(uri)
 
@@ -86,14 +104,5 @@ app.post('/referral', async(req, res) => {
         console.log(error);
     }
 })
-
-app.post('/message', (req, res) => {
-    res.json("Hello conenxtus")
-})
-
-app.get('/message', (req, res) => {
-    res.json("Hello conenxtus")
-})
-
 
 app.listen(PORT, () => console.log("server runnig on PORT " + PORT))
