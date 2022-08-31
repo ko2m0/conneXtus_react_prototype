@@ -7,7 +7,7 @@ align-items: center;
 padding: 0 30px;
 height: 250px;
 position: relative;
-z-index: 1;
+z-index: 0;
 `
 export const VideoContainerBg = styled.div`
 position: absolute;

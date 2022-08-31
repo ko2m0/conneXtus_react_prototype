@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 import SmSection from '../components/SmSection'
 import TabsSection from '../components/TabsSection/index'
 import UserProfileSection from '../components/UserProfileSection'
-import VideoSection from '../components/VideoSection'
+import VideoSection2 from '../components/VideoSection2'
 import '../App.css'
 
 import TinderCard from "react-tinder-card";
@@ -69,7 +69,7 @@ const Home = () => {
               preventSwipe={["up", "down"]}
             >
               <div className="wrapper card">
-                <VideoSection />
+                <VideoSection2 />
                 <UserProfileSection professional={professional} />
                 <BtnsSection
                   currentProfessional={professional}
