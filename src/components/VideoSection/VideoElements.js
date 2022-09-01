@@ -5,7 +5,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 padding: 0 30px;
-height: 250px;
+height: 350px;
 position: relative;
 z-index: 0;
 `
@@ -24,4 +24,10 @@ width: 100%;
 height: 100%;
 object-fit: cover;
 -o-object-fit: cover;
+`
+export const PngVideoMask = styled.div`
+mask-image: radial-gradient(ellipse, black 60%, rgba(0, 0, 0, 0.8));;
+-webkit-mask-image: radial-gradient(ellipse, black 70%, rgba(0, 0, 0, 0.8));;
+-webkit-mask-repeat: no-repeat;
+mask-repeat: no-repeat;
 `

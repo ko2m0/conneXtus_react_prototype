@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import Video from '../../videos/wendy_4color.MP4';
-import { VideoContainer, VideoContainerBg, VideoBg } from '../VideoSection/VideoElements';
+import { VideoContainer, VideoContainerBg, PngVideoMask } from '../VideoSection/VideoElements';
+import pngvideomask from '../../img/pngVideoMask.png';
 
 
 const VideoSection = () => {
@@ -9,12 +10,13 @@ const VideoSection = () => {
     <>
     <VideoContainer>
         <VideoContainerBg>
+          <PngVideoMask>
             <ReactPlayer
             url={Video}
+            classname='react-player'
             controls='true'
-            width='100%'
-            height="100%"
             />
+            </PngVideoMask>
         </VideoContainerBg>
     </VideoContainer>
     </>
