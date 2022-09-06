@@ -18,6 +18,9 @@ import ReferralForm from '../components/Forms/ReferralForm';
 import axios from 'axios'
 import { FormAlert } from '../components/Forms/FormElements'
 
+// require('dotenv').config()
+const API = 'http://localhost:8000' //process.env.API_URI
+
 const Home = () => {
   const [professionals, setProfessionals] = useState([]);
   const [showMeetingForm, setShowMeetingForm] = useState(false);
@@ -28,7 +31,7 @@ const Home = () => {
 
   const users = async() => {
     try {
-      const res = await axios.get('http://localhost:8000/users')
+      const res = await axios.get(API + '/users')
 
       setProfessionals(res.data)  
     } catch (error) {
@@ -39,7 +42,7 @@ const Home = () => {
   }
 
   const getProfile = async(userName) => {
-    const res = await axios.get("http://localhost:8000/user/" + userName)
+    const res = await axios.get(API + "/user/" + userName)
     console.log(res)
     console.log(res.data)
     setProfessionals([{...res.data.user}])

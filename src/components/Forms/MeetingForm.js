@@ -22,7 +22,12 @@ function MeetingForm({ currentProfessional, setShow }) {
         return
       }
 
-      const response = await axios.post('http://localhost:8000/meeting', {...inputs, user_id: currentProfessional.user_id})
+      const response = await axios.post('http://localhost:8000/meeting', {
+        ...inputs,
+        user_id: currentProfessional.user_id,
+        prof_firstname: currentProfessional.first_name,
+        prof_email: currentProfessional.email
+      })
 
       if(response.status === 201) {
         setSuccess(true)
