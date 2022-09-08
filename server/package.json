@@ -1,7 +1,6 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start:backend": "nodemon index.js",
@@ -19,5 +18,6 @@
     "nodemailer": "^6.7.8",
     "nodemon": "^2.0.19",
     "uuid": "^8.3.2"
-  }
+  },
+  "description": ""
 }

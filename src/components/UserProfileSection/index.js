@@ -26,7 +26,7 @@ const UserProfileSection = ({professional}) => {
                 <p className='unuscolor-txt nameSection-name'>{professional.first_name.concat(' ', professional.last_name)}</p>
               </li>
               <li>
-                <p className='unuscolor-txt nameSection-profession'>{professional.credetials}</p>
+                <p className='unuscolor-txt nameSection-profession'>{professional.credential}</p>
               </li>
             </ul>
         </NameSection>

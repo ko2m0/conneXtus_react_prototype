@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 import SmSection from '../components/SmSection'
 import TabsSection from '../components/TabsSection/index'
 import UserProfileSection from '../components/UserProfileSection'
-import VideoSection from '../components/VideoSection'
+import VideoSection2 from '../components/VideoSection2'
 import '../App.css'
 
 import TinderCard from "react-tinder-card";
@@ -19,7 +19,7 @@ import axios from 'axios'
 import { FormAlert } from '../components/Forms/FormElements'
 
 // require('dotenv').config()
-const API = '72.167.84.16:8000'
+const API = 'http://localhost:8000'
 // const API = process.env.API_URI
 
 const Home = () => {
@@ -73,7 +73,7 @@ const Home = () => {
               preventSwipe={["up", "down"]}
             >
               <div className="wrapper card">
-                <VideoSection />
+                <VideoSection2 />
                 <UserProfileSection professional={professional} />
                 <BtnsSection
                   currentProfessional={professional}
