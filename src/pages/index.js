@@ -19,7 +19,8 @@ import axios from 'axios'
 import { FormAlert } from '../components/Forms/FormElements'
 
 // require('dotenv').config()
-const API = 'http://localhost:8000' //process.env.API_URI
+const API = '72.167.84.16:8000'
+// const API = process.env.API_URI
 
 const Home = () => {
   const [professionals, setProfessionals] = useState([]);
