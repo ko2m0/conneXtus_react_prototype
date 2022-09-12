@@ -19,7 +19,7 @@ import axios from 'axios'
 import { FormAlert } from '../components/Forms/FormElements'
 
 // require('dotenv').config()
-const API = 'http://localhost:8000'
+const API = 'https://connextus-webservice.onrender.com/'
 // const API = process.env.API_URI
 
 const Home = () => {
