@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from "axios";
-import { FormContainer, FormAlert, ErrorMessage } from './FormElements'
+import { FormContainer, FormAlert, ErrorMessage, FormSuccess, FormFail } from './FormElements'
+import { FaCheck, FaExclamationTriangle } from 'react-icons/fa'; 
 
 function ReferralForm({ currentProfessional, setShow }) {
   const [inputs, setInputs] = useState({});
@@ -80,7 +81,16 @@ function ReferralForm({ currentProfessional, setShow }) {
         </label>
         {!success && <input type="submit" value="submit info" />}
         {success && <input type="submit" value="submit info" className="btn-success" />}
+        <FormSuccess>
+            <FaCheck/>
+            <span>The information has been successfully submitted!</span>
+          </FormSuccess>
+          <FormFail>
+            <FaExclamationTriangle/>
+            <span>There is an error on your form, please try again.</span>
+          </FormFail>
     </form>
+
     </FormContainer>
     </>
   )

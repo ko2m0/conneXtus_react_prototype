@@ -66,3 +66,18 @@ padding: 20px 10px;
 border: 1px dashed red;
 width: 100%;
 `
+export const FormSuccess = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center; 
+text-align: center;
+`
+export const FormFail = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center; 
+text-align: center;
+`
+

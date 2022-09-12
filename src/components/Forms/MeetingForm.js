@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from "axios";
-import { FormContainer, FormAlert, ErrorMessage } from "./FormElements";
+import { FaCheck, FaCross, FaExclamationTriangle, FaXing } from 'react-icons/fa';
+import { FormContainer, FormAlert, ErrorMessage, FormSuccess, FormFail } from "./FormElements";
 
 function MeetingForm({ currentProfessional, setShow }) {
   const [inputs, setInputs] = useState({});
@@ -85,7 +86,7 @@ function MeetingForm({ currentProfessional, setShow }) {
           <label>
             Set the date & time of meeting:
             <input
-              type="date"
+              type="datetime-local"
               name="date"
               value={inputs.date || ""}
               onChange={handleChange}
@@ -93,6 +94,14 @@ function MeetingForm({ currentProfessional, setShow }) {
             <FormAlert>an alert</FormAlert>
           </label>
           <input type="submit" value="submit info" className={success ? 'btn-success' : ''} />
+         <FormSuccess>
+            <FaCheck/>
+            <span>The information has been successfully submitted!</span>
+          </FormSuccess>
+          <FormFail>
+            <FaExclamationTriangle/>
+            <span>There is an error on your form, please try again.</span>
+          </FormFail> 
         </form>
       </FormContainer>
     </>

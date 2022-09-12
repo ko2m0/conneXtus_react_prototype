@@ -15,9 +15,11 @@ position: relative;
 `
 export const ProfilePicSection = styled.div`
 display: flex;
-justify-content: space-around;
+flex-direction: column;
+justify-content: center;
 align-items: center;
 position: relative;
+padding: 5px;
 `
 export const NameSection = styled.div`
 display: flex;
