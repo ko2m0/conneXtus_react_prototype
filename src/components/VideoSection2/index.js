@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-import Video from '../../videos/wendy_4color.MP4';
+import Video from '../../videos/NewVideoWendy.MP4';
 import { VideoContainer, VideoContainerBg, PngVideoMask } from '../VideoSection/VideoElements';
 import pngvideomask from '../../img/pngVideoMask.png';
 

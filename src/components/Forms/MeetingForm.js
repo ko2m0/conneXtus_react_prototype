@@ -62,16 +62,6 @@ function MeetingForm({ currentProfessional, setShow }) {
             <FormAlert>an alert</FormAlert>
           </label>
           <label>
-            Enter your phone number: *
-            <input
-              type="number"
-              name="phone_number"
-              value={inputs.phone_number || ""}
-              onChange={handleChange}
-            />
-            <FormAlert>an alert</FormAlert>
-          </label>
-          <label>
             Enter your e-mail: *
             <input
               type="email"
@@ -81,6 +71,17 @@ function MeetingForm({ currentProfessional, setShow }) {
             />
             <FormAlert>an alert</FormAlert>
           </label>
+          <label>
+            Enter your phone number: 
+            <input
+              type="number"
+              name="phone_number"
+              value={inputs.phone_number || ""}
+              onChange={handleChange}
+            />
+            <FormAlert>an alert</FormAlert>
+          </label>
+          
           <label>
             Set the date & time of meeting:
             <input
