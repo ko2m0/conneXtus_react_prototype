@@ -68,26 +68,26 @@ const Home = () => {
         <div className="cardContainer">
           {professionals.map((professional) => (
             <TinderCard
-              className="swipe"
+              className="swipe clearfix"
               key={professional.user_id}
               preventSwipe={["up", "down"]}
             >
-              <div className="wrapper card">
-                <VideoSection2 />
-                <UserProfileSection professional={professional} />
-                <BtnsSection
+              <div className="wrapper card border-test clearfix">
+                <VideoSection2 className="clearfix" />
+                <UserProfileSection professional={professional} className="clearfix"/>
+                <BtnsSection className="clearfix"
                   currentProfessional={professional}
                   setCurrentProfessional={setCurrentProfessional}
                   setShowMeetingForm={setShowMeetingForm}
                   setShowReferralForm={setShowReferralForm}
                   />
-                <TabsSection
+                <TabsSection className="clearfix"
                   professional={professional}
                   setCurrentProfessional={setCurrentProfessional}
                   setShowAllClients={setShowAllClients}
                 />
-                <SmSection />
-                <Footer />
+                <SmSection className="clearfix" />
+                <Footer  className="clearfix"/>
               </div>
             </TinderCard>
           ))}

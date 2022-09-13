@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const SectionContainer = styled.div`
 position: relative;
 border-bottom: 1px solid #014479;
+grid-area: sm;
 `
 
 export const SmContainer = styled.div`

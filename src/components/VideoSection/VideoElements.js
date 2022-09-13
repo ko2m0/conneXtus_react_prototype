@@ -1,12 +1,10 @@
 import styled from 'styled-components'
 
 export const VideoContainer = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-height: 215px;
+height: 180px;
 position: relative;
 z-index: 0;
+grid-area: video;
 `
 export const VideoContainerBg = styled.div`
 position: absolute;

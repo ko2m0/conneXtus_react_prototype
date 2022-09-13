@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from "axios";
-import { FormContainer, FormAlert, ErrorMessage, FormSuccess, FormFail } from './FormElements'
+import { FormContainer, FormAlert, FormFlex, ErrorMessage, FormSuccess, FormFail } from './FormElements'
 import { FaCheck, FaExclamationTriangle } from 'react-icons/fa'; 
 
 function ReferralForm({ currentProfessional, setShow }) {
@@ -50,6 +50,7 @@ function ReferralForm({ currentProfessional, setShow }) {
   return (
     <>
     <FormContainer>
+      <FormFlex>
         {error && <ErrorMessage>{error}</ErrorMessage>}
     <form onSubmit={handleSubmit}>
       <label>Enter Referral name: *
@@ -90,7 +91,7 @@ function ReferralForm({ currentProfessional, setShow }) {
             <span>There is an error on your form, please try again.</span>
           </FormFail>
     </form>
-
+    </FormFlex>
     </FormContainer>
     </>
   )

@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const SectionContainer = styled.div`
 position: relative;
-padding: 10px 0;
-width:100%
+padding: 10px;
+width:100%;
+grid-area: btns;
 `
 
 export const BtnsSectionContainer = styled.div`
@@ -26,4 +27,19 @@ text-align: center;
 display: flex;
 align-items: center;
 justify-content:center;
+
+@media screen and (max-width: 480px) {
+    font-size: 12px;
+}
+
+
+@media screen and (max-device-width: 480px)
+and (orientation: portrait) {
+    padding: 16px 32px;
+    font-size: 12px;
+
+}
+
+
+
 `

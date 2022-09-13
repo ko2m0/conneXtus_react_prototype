@@ -3,8 +3,9 @@ import styled from 'styled-components';
 
 export const SectionContainer = styled.div`
 position: relative;
-padding: 10px;
+padding: 5px;
 border-bottom: 1px solid #014479;
+grid-area: profile;
 `
 
 export const UserProfileContainer = styled.div`

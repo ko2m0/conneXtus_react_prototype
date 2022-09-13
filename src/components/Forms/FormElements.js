@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const FormContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+display: block;
 padding: 10px 0;
+max-height: 65vh;
+overflow: hidden;
+
 
 label{
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     line-height: 1.5;
     padding: 10px 0;
@@ -16,7 +16,7 @@ label{
 
 input, select {
     width: 100%;
-    padding: 12px 20px;
+    padding: 6px 10px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -44,11 +44,19 @@ input, select {
   
   div {
     border-radius: 5px;
-    background-color: #f2f2f2;
+    
     padding: 20px;
   }
 
 `
+
+export const FormFlex = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
 
 export const FormAlert = styled.span`
   display: block;
