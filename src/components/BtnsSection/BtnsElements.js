@@ -30,12 +30,13 @@ justify-content:center;
 
 @media screen and (max-width: 480px) {
     font-size: 12px;
+    padding: 10px 20px;
 }
 
 
 @media screen and (max-device-width: 480px)
 and (orientation: portrait) {
-    padding: 16px 32px;
+    padding: 10px 20px;
     font-size: 12px;
 
 }
